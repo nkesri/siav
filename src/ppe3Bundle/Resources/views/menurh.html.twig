@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <img class="center-block" src="{{asset('bundles/images/logoxs.png')}}"/>
+    <div class="col-lg-10 col-lg-offset-1">
+    <nav class="navbar navbar-default ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" >GSB Gestion des postes disponibles </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a class ="btn btn-info" href="{{path('region')}}">Liste des régions</a></li>
+                <li><a class ="btn btn-info"href="#">Gestion des affectations</a></li>
+                <li><a class ="btn btn-info"href="{{path('logout')}}">Deconnecter</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+
+    {% block siav_body %} 
+        {# ici le code twig de la vue fille #}
+    {% endblock %}
+
+{% endblock %}
+

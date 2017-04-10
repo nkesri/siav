@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ppe3Bundle\Entity\Affectation" table="affectation">
+    <indexes>
+      <index name="IDX_F4DD61D35D419CCB" columns="idUtilisateur"/>
+      <index name="IDX_F4DD61D36C7359EC" columns="idRegion"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateaffect" type="date" column="dateaffect" nullable="false"/>
+    <many-to-one field="idregion" target-entity="Region" fetch="LAZY">
+      <join-columns>
+        <join-column name="idRegion" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idutilisateur" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="idUtilisateur" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

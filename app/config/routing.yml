@@ -1,0 +1,8 @@
+ppe3:
+    resource: "@ppe3Bundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

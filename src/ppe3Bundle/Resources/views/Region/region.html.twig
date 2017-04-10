@@ -1,0 +1,33 @@
+{% extends "ppe3Bundle::menurh.html.twig" %}
+{% block title %} ppe3Bundle:RegionController:lesRegions{% endblock %}
+{% block siav_body %}
+    
+    <h1>Espace RH</h1>
+<div class="container-fluid col-lg-10 col-lg-offset-2" >
+<div class="row col-lg-6"> 
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Liste des régions de France</h3>
+	</div>
+	<div class="panel-body">
+		<table class="table table-striped ">
+			<tr>
+				<th> Nom des Régions </th>
+				<th> Places disponibles  </th>
+				<th> Actions  </th>
+			</tr>
+			{%for region in lesRegions %}
+				<tr >
+					<td> {{region.libRegion}} </td>
+					<td><center> {{region.posteDispo}} </center></td>
+				<td> <a class ="btn btn-primary" href="#">Modifier</a> </td>
+				</tr>
+			{%endfor%}
+		</table>
+	</div>
+</div>
+
+</div>
+</div> 
+{% endblock %}
+

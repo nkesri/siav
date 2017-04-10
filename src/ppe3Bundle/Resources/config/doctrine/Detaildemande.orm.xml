@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ppe3Bundle\Entity\Detaildemande" table="detaildemande">
+    <indexes>
+      <index name="IDX_CD6D29BD362DBC57" columns="idDemande"/>
+      <index name="IDX_CD6D29BD6C7359EC" columns="idRegion"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="idDemande" columns="idDemande,idRegion"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="numordre" type="integer" column="numordre" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="iddemande" type="integer" column="idDemande" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="idregion" type="integer" column="idRegion" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
